@@ -24,11 +24,12 @@ while (funcionar) {
 
 
     /*  
-    * Crear publicación
+     * Crear publicación
      * Leer todas
      * Leer por ID
      * Actualizar por ID
-     * Borrar por ID */
+     * Borrar por ID 
+     */
     switch (opcion) {
         case '1':
             const autor = teclado("Introduzca el nombre del autor: ");
