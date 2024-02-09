@@ -26,6 +26,8 @@ app.get('/publicacion/:id', (req, res) => {
     res.status(200).send(almacenaUno);
 });
 
+// todo: need to implement the other methods.
+
 app.listen(puerto, () => {
     console.log('Estamos activos papá');
 });
