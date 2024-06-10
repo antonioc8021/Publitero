@@ -26,7 +26,29 @@ app.get('/publicacion/:id', (req, res) => {
     res.status(200).send(almacenaUno);
 });
 
-// todo: need to implement the other methods.
+app.put('/publicacion/:id', (req, res) => {
+    const id = req.params.id;
+    const textoNuevo = req.body.texto;
+
+    try {
+        redSocial.actualizarPublicacion(parseInt(id), textoNuevo);
+        res.status(200).send();
+    } catch (error) {
+        res.status(404).send({ error: 'Publicación no encontrada' });
+    }
+});
+
+app.delete('/publicacion/:id', (req, res) => {
+    const id = req.params.id;
+
+    try {
+        redSocial.borrarPublicacion(parseInt(id));
+        res.status(204).send();
+    } catch (error) {
+        res.status(404).send({ error: 'Publicación no encontrada' });
+    }
+});
+
 
 app.listen(puerto, () => {
     console.log('Estamos activos papá');
